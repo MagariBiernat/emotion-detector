@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+
+<div>
+  <form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <input class="inputLeft" type="file" name="myfile" />
+    <input class="inputRight" type="submit" />
+    <p>
+      <div class="photoContainerBackground">
+        {% if uploaded_file_url %}
+        <img class="photoContainer" src="{{ uploaded_file_url }}" alt="Upload" />
+        {% endif %}
+      </div>
+    </p>
+    
+  </form>
+</div>
+
+{% endblock content%}
+
+<div>
+  <div></div>
+</div>
